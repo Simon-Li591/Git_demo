@@ -1,5 +1,6 @@
 package com.JUC;
 
+import java.util.concurrent.Callable;
 import java.util.concurrent.locks.StampedLock;
 
 /*
@@ -105,3 +106,17 @@ class new1 {
         }
     }
 }
+
+class task implements Callable<Integer> {
+
+    @Override
+    public Integer call() throws Exception {
+        return longTimeCalculation();
+    }
+
+    private Integer longTimeCalculation() {
+        int i = 1;
+        return Integer.getInteger(String.valueOf(1));
+    }
+}
+
